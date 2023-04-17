@@ -1,10 +1,10 @@
 const express = require('express')
-// const routes = require('./routes/routes')
+const routes = require('./routes/router')
 
 const server = express()
 server.use(express.json())
 server.use(express.urlencoded({extended:true}))
-// server.use(routes)
+server.use(routes)
 
 const PORT = 3000
 
