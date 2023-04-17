@@ -1,0 +1,32 @@
+
+
+GET http://localhost:3000/
+
+###
+
+# Consulta produto por codigo
+#Retorna o produto de acordo com o codigo passado na URL (apenas 1,2,3)
+GET http://localhost:3000/2
+
+###
+# Edita produto cadastrado
+# Edita o produto de acordo com o codigo passado na URL (apenas 1,2,3)
+
+  PUT http://localhost:3000/1
+ Content-Type: application/json
+
+  {
+    "id": 1,
+    "nome": "Notebook HP",
+    "descrição":"Notebook HP Ideapad 3i Intel Celeron 4GB 128GB",
+    "qdade": "55",
+    "valor": "1952"
+  }
+
+###
+
+# Exclui produto cadastrado
+# Deleta o produto de acordo com o codigo passado na URL (apenas 1,2,3)
+DELETE http://localhost:3000/2
+
+
