@@ -25,28 +25,24 @@ Content-Type: application/json
 
 
 
-
-
-
 ###
-# Edita produto cadastrado
-# Edita o produto de acordo com o codigo passado na URL (apenas 1,2,3)
+# Descrição: Atualiza os dados do conjunto correspondentes ao ID informado.
+# Funcionalidade: Atualizar os dados correspondentes ao ID.
 
-  PUT http://localhost:3000/1
- Content-Type: application/json
+PUT http://localhost:3000/3
+Content-Type: application/json
 
-  {
-    "id": 1,
-    "nome": "Notebook HP",
-    "descrição":"Notebook HP Ideapad 3i Intel Celeron 4GB 128GB",
-    "qdade": "55",
-    "valor": "1952"
-  }
+{
+  "id":"3",
+  "descricao": "Tênis NOVO Esportivo",
+  "preco": 149.99,
+  "cores": ["preto", "branco", "cinza", "azul"]
+}
 
 ###
 
-# Exclui produto cadastrado
-# Deleta o produto de acordo com o codigo passado na URL (apenas 1,2,3)
+# Descrição: Remove os dados do conjunto correspondentes ao ID informado.
+# Funcionalidade: Remover os dados correspondentes ao ID.
 DELETE http://localhost:3000/2
 
 
