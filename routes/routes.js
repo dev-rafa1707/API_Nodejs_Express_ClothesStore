@@ -4,9 +4,9 @@ const controller = require("../controllers/controller")
 const routes = express.Router()
   
 routes.get("/",controller.getAll)
-routes.get("/pessoas/:id",controller.getPessoaById)
-routes.post("/pessoas",controller.createPessoa)
-routes.put("/pessoas/:id",controller.updatePessoa)
-routes.delete("/pessoas/:id",controller.deletePessoa)
+routes.get("/:id",controller.getItemById)
+routes.post("/",controller.createItem)
+routes.put("/:id",controller.updateItem)
+routes.delete("/:id",controller.deleteItem)
 
 module.exports = routes

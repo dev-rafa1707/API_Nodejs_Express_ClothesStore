@@ -1,12 +1,32 @@
-
-
+# Descrição: Retorna todos os dados do conjunto em formato JSON.
+# Funcionalidade: Listar todos os dados.
 GET http://localhost:3000/
 
 ###
 
-# Consulta produto por codigo
-#Retorna o produto de acordo com o codigo passado na URL (apenas 1,2,3)
-GET http://localhost:3000/2
+# Descrição: Retorna os dados do conjunto correspondentes ao ID informado em
+# formato JSON.
+# Funcionalidade: Listar os dados correspondentes ao ID.
+GET http://localhost:3000/3
+
+### 
+
+# Descrição: Adiciona um novo dado ao conjunto.
+# Funcionalidade: Adicionar novo dado.
+POST http://localhost:3000/
+Content-Type: application/json
+
+{
+  "id":"",
+  "descricao": "Tênis NOVO Esportivo",
+  "preco": 149.99,
+  "cores": ["preto", "branco", "cinza", "azul"]
+}
+
+
+
+
+
 
 ###
 # Edita produto cadastrado
