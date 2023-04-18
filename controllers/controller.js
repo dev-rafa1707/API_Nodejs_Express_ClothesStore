@@ -2,7 +2,7 @@ var path = require('path');
 
 const controller = {}
 
-let indice = 4
+let indexList = 4
 
 var list = [
 {
@@ -47,7 +47,7 @@ controller.getItemById = (req,res)=>{
 
 controller.createItem = (req,res)=>{
     const novoItem = req.body
-    novoItem.id = indice + 1
+    novoItem.id = indexList + 1
     list.push(novoItem)
     res.status(200).redirect("/")
 }
