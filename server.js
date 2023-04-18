@@ -6,8 +6,8 @@ server.use(express.json())
 server.use(express.urlencoded({extended:true}))
 server.use(routes)
 
-const PORTA = 3000
+const PORT = 3000
 
-server.listen(PORTA,()=>{
-    console.log("Servidor executando na porta "+PORTA)
+server.listen(PORT,()=>{
+    console.log("Listening on PORT "+PORT)
 })

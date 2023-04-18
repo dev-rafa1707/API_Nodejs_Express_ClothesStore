@@ -4,7 +4,7 @@ const controller = {}
 
 let indice = 4
 
-var lista = [
+var list = [
 {
 "id": 1,
 "descricao": "Camiseta",
@@ -32,11 +32,11 @@ var lista = [
 ];
 
  controller.getAll = (req,res)=>{
-    res.status(200).send(lista)
+    res.status(200).send(list)
 }
 
 controller.getItemById = (req,res)=>{
-    item = lista.find(i => i.id == req.params.id)
+    item = list.find(i => i.id == req.params.id)
   
     if(item){
       res.status(200).send(item)
@@ -48,16 +48,16 @@ controller.getItemById = (req,res)=>{
 controller.createItem = (req,res)=>{
     const novoItem = req.body
     novoItem.id = indice + 1
-    lista.push(novoItem)
+    list.push(novoItem)
     res.status(200).redirect("/")
 }
 
 controller.updateItem = (req,res)=>{
-    itemIndice = lista.findIndex(p => p.id == req.params.id)
+    itemIndice = list.findIndex(p => p.id == req.params.id)
     console.log(itemIndice)
     if(itemIndice >= 0){
       const newItem = req.body;
-      lista[itemIndice] = newItem;
+      list[itemIndice] = newItem;
       res.status(200).send("OK")
     }else{
       res.status(404).sendFile(path.resolve(__dirname+"/../views/notfound.html"))
@@ -65,9 +65,9 @@ controller.updateItem = (req,res)=>{
 }
 
 controller.deleteItem = (req,res)=>{
-  const item = lista.findIndex(p => p.id == req.params.id);
+  const item = list.findIndex(p => p.id == req.params.id);
   if (item >= 0) {
-    lista.splice(item, 1);
+    list.splice(item, 1);
     res.status(200).send("OK")
   }else{
     res.status(404).sendFile(path.resolve(__dirname+"/../views/notfound.html"))
